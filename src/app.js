@@ -7,6 +7,11 @@ const connectDB = require("./config/database");
 const authRoutes = require("./routes/authRoutes");
 const addressRoutes = require("./routes/addressRoutes")
 const restaurantRoutes= require('./routes/restaurantRoutes')
+const cartRoutes = require('./routes/cartRoutes');
+const menuRoutes = require('./routes/menuRoutes');
+const orderRoutes = require('./routes/orderRoutes');
+const paymentRoutes = require('./routes/paymentRoutes');
+const trackingRoutes = require('./routes/orderTrackingRoutes');
 
 dotenv.config();
 // ✅ Connect to MongoDB (Only Once)
@@ -25,6 +30,11 @@ app.use(helmet());
 app.use("/api/auth", authRoutes);
 app.use('/api/addresses', addressRoutes);
 app.use('/api/restaurants',restaurantRoutes)
+app.use('/api/cart', cartRoutes);
+app.use('/api/menu', menuRoutes);
+app.use('/api/orders', orderRoutes);
+app.use('/api/payments', paymentRoutes);
+app.use('/api/tracking', trackingRoutes);
 
 app.get("/", (req, res) => res.send("App is running"))
 
