@@ -13,6 +13,7 @@ const orderRoutes = require('./routes/orderRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
 const trackingRoutes = require('./routes/orderTrackingRoutes');
 const reviewRoutes = require('./routes/reviewRoutes');
+const deliveryPartnerRoutes = require('./routes/deliveryPartnerRoutes');
 
 dotenv.config();
 // ✅ Connect to MongoDB (Only Once)
@@ -37,6 +38,7 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/tracking', trackingRoutes);
 app.use('/api/reviews', reviewRoutes);
+app.use('/api/delivery-partners', deliveryPartnerRoutes);
 
 app.get("/", (req, res) => res.send("App is running"))
 
